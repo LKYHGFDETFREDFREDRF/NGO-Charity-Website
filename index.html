@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hope Foundation NGO</title>
+
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+header {
+  background: green;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background: black;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 20px;
+  background: white;
+  margin: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px gray;
+}
+
+.progress {
+  width: 60%;
+  background: lightgray;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.progress-bar {
+  height: 25px;
+  background: green;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.stats {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+form input, form textarea {
+  width: 60%;
+  padding: 10px;
+  margin: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.testimonial {
+  font-style: italic;
+  font-size: 18px;
+  color: blue;
+}
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h1>Hope Foundation NGO</h1>
+<p>Helping Hands for a Better Future</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About Us</a>
+<a href="#causes">Causes</a>
+<a href="#impact">Impact</a>
+<a href="#donate">Donate</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+<h2>Welcome to Hope Foundation</h2>
+<p>We support poor children, education, food distribution, and healthcare programs.</p>
+
+<h3>Donation Progress</h3>
+<div class="progress">
+  <div class="progress-bar" id="donateBar">0%</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Us</h2>
+<p>Hope Foundation is a non-profit organization dedicated to social welfare and charity.</p>
+
+<h3>Testimonials</h3>
+<div class="testimonial" id="review">
+"This NGO changed my life!"
+</div>
+</section>
+
+<!-- CAUSES -->
+<section id="causes">
+<h2>Our Causes</h2>
+<ul>
+<li>Education for Poor Children</li>
+<li>Food Donation Programs</li>
+<li>Healthcare Support</li>
+<li>Women Empowerment</li>
+</ul>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+<h2>Our Impact</h2>
+<div class="stats">
+<p>People Helped: <span id="people">0</span></p>
+<p>Volunteers: <span id="volunteers">0</span></p>
+</div>
+</section>
+
+<!-- DONATE -->
+<section id="donate">
+<h2>Donate Now</h2>
+<p>This is a simulated donation system for project purpose.</p>
+<button onclick="increaseDonation()">Donate ₹100</button>
+</section>
+
+<!-- CONTACT / VOLUNTEER -->
+<section id="contact">
+<h2>Volunteer Registration</h2>
+<form>
+<input type="text" placeholder="Your Name" required><br>
+<input type="email" placeholder="Email" required><br>
+<textarea placeholder="Why do you want to join?" required></textarea><br>
+<button type="submit">Register</button>
+</form>
+</section>
+
+<footer>
+<p>© 2026 Hope Foundation NGO | Project Demo</p>
+</footer>
+
+<script>
+// Donation Progress Bar
+let donation = 0;
+function increaseDonation() {
+  if (donation < 100) donation += 10;
+  document.getElementById("donateBar").style.width = donation + "%";
+  document.getElementById("donateBar").innerHTML = donation + "%";
+}
+
+// Impact Statistics Animation
+let people = 0;
+let volunteers = 0;
+
+setInterval(() => {
+  if (people < 500) people += 5;
+  if (volunteers < 120) volunteers += 1;
+  document.getElementById("people").innerHTML = people;
+  document.getElementById("volunteers").innerHTML = volunteers;
+}, 100);
+
+// Testimonials Carousel
+let reviews = [
+  "This NGO changed my life!",
+  "Great support for poor children.",
+  "Proud to be a volunteer!",
+  "Helping society with real impact."
+];
+let i = 0;
+
+setInterval(() => {
+  document.getElementById("review").innerHTML = '"' + reviews[i] + '"';
+  i = (i + 1) % reviews.length;
+}, 2000);
+</script>
+
+</body>
+</html>
